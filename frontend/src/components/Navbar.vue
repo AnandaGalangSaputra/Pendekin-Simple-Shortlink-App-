@@ -1,60 +1,37 @@
 <template>
-  <nav class="bg-white dark:bg-gray-900">
-    <div class="max-w-screen-xl mx-auto flex items-center justify-between p-4">
-      <!-- Logo + Brand -->
-      <a href="/" class="flex items-center space-x-2">
-        <img 
-          src="https://flowbite.com/docs/images/logo.svg" 
-          class="h-8" 
-          alt="Logo"
-        />
-        <span class="text-2xl font-bold text-gray-900 dark:text-white">
-          Pendekin
-        </span>
-      </a>
+  <div class="navbar bg-base-100 lg:px-12">
+    <div class="flex-1">
+      <a class="btn btn-ghost text-2xl md:text-3xl font-extrabold text-blue-600">Pendekin</a>
+    </div>
 
-      <!-- Hamburger (mobile) -->
-      <button 
-        data-collapse-toggle="navbar-default" 
-        type="button"
-        class="md:hidden inline-flex items-center p-2 w-10 h-10 justify-center text-gray-600 rounded-lg hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800"
-        aria-controls="navbar-default" 
-        aria-expanded="false"
-      >
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <!-- Menu untuk desktop -->
+    <div class="hidden md:flex gap-6 font-medium items-center">
+      <router-link to="/" class="hover:text-blue-600 transition">Home</router-link>
+      <router-link to="/ListLink" class="hover:text-blue-600 transition">ListLink</router-link>
+    </div>
+
+    <!-- Dropdown menu untuk mobile -->
+    <div class="dropdown md:hidden">
+      <label tabindex="0" class="btn btn-ghost">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M4 6h16M4 12h16M4 18h16" />
         </svg>
-      </button>
-
-      <!-- Menu -->
-      <div class="hidden md:block" id="navbar-default">
-        <ul class="flex flex-col md:flex-row md:space-x-8 font-medium">
-          <li>
-            <a href="#" class="block py-2 px-3 text-white bg-blue-600 rounded-md md:bg-transparent md:text-blue-600 md:p-0 dark:text-white md:dark:text-blue-500">
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 px-3 text-gray-700 rounded-md hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 md:p-0 dark:text-gray-300 dark:hover:text-blue-400">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#" class="block py-2 px-3 text-gray-700 rounded-md hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 md:p-0 dark:text-gray-300 dark:hover:text-blue-400">
-              Contact
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Button Action -->
-      <div class="hidden md:block">
-        <button class="btn btn-primary rounded-full px-6">
-          Get Started
-        </button>
-      </div>
+      </label>
+      <ul tabindex="0"
+        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-40">
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/ListLink">ListLink</router-link></li>
+      </ul>
     </div>
-  </nav>
+    <div class="">
+      <ThemeToggle />
+    </div>
+  </div>
 </template>
+
+
+<script setup>
+import ThemeToggle from './ThemeToggle.vue';
+</script>
