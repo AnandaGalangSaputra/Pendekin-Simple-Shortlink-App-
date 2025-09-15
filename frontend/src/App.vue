@@ -6,7 +6,7 @@ import Navbar from './components/Navbar.vue'
 </script>
 
 <template>
-  <div id="app" class="container px-40 mx-auto">
+  <div id="app" class="container mx-auto">
     <Navbar/>
     <RouterView />
     <!-- <HelloWorld msg="Welcome to Your Vue.js + Vite App" /> -->
