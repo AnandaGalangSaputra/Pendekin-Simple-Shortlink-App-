@@ -1,7 +1,9 @@
 <template>
-  <div class="navbar bg-base-100 lg:px-12">
+  <div class="navbar bg-base-100">
     <div class="flex-1">
-      <a class="btn btn-ghost text-2xl md:text-3xl font-extrabold text-blue-600">Pendekin</a>
+      <router-link to="/">
+      <a class="btn btn-ghost text-2xl md:text-3xl font-extrabold text-blue-600">Pendekin.com</a>
+      </router-link>
     </div>
 
     <!-- Menu untuk desktop -->
